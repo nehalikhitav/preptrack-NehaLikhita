@@ -97,10 +97,15 @@ for day in range(1, 8):
             "or -1 for absent: "
         )
     )
+    while not(score == -1 or (score>=0 and score<=100)):
+        score = int(input("score should be -1 or between 0 to 100. Enter again: "))
 
     # TODO: Handle absence.
     # Increase absent_days and use continue.
-
+    if score == -1:
+        absent_days += 1
+        print(f"Day {day} Result: Absent")
+        continue
     # TODO: Increase attempted_days and total_score.
 
     # TODO: Initialize or update:
