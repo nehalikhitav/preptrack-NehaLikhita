@@ -104,23 +104,50 @@ for day in range(1, 8):
     # Increase absent_days and use continue.
     if score == -1:
         absent_days += 1
-        print(f"Day {day} Result: Absent")
         continue
     # TODO: Increase attempted_days and total_score.
+    attempted_days += 1
+    total_score += score
 
     # TODO: Initialize or update:
     # highest_score, highest_score_day,
     # lowest_score and lowest_score_day.
+    if score > highest_score:
+        highest_score=score
+        highest_score_day=day
+    if score < lowest_score:
+        lowest_score=score
+        lowest_score_day=day
 
     # TODO: Classify the score:
     # 75–100  -> Strong
     # 60–74   -> Satisfactory
     # 40–59   -> Needs Improvement
     # 0–39    -> Critical
+    if score >=75 and score <=100:
+        strong_days+=1
+        print("Day {day}: Strong")
+    elif score >=60 and score<=74:
+        satisfactory_days+=1
+        print("Day {day}: Satisfactory")
+    elif score >=40 and score<=59:
+        improvement_days+=1
+        print("Day {day}: Needs Improvement")
+    else:
+        critical_days+=1
+        print("Day {day}: Critical Need Improvement")
 
     # TODO: Count passed and failed days.
+    if score>=50:
+        passed_days+=1
+    else:
+        failed_days+=1
 
     # TODO: Store only the first critical day and score.
+     if score < 40 and not critical_score_found:
+        critical_score_found = True
+        first_critical_day = day
+        first_critical_score = score
 
 
 # --------------------------------------------------
@@ -129,7 +156,10 @@ for day in range(1, 8):
 
 # TODO: Prevent division by zero.
 average_score = 0
-
+if attempted_days>0:
+    average_score = total_score / attempted_days
+else:
+    average_score = 0
 
 # --------------------------------------------------
 # 5. CREATE ELIGIBILITY CONDITIONS
