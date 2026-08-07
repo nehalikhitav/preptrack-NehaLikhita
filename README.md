@@ -45,10 +45,10 @@ Basic Data Processing
 How to Run the Program
 -----------------------
 Prerequisites
----
-Python 3.x installed on your system
+    Python 3.x installed on your system
+    
 Steps
----
+
 1.Download or clone the project.
 2.Open the project folder in Visual Studio Code or any Python IDE.
 3.Open the terminal.
