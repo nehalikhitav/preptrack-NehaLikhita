@@ -91,22 +91,56 @@ Make sure Python 3.x is installed on your system.
 7. Use `-1` when the student is absent.
 8. View the final PrepTrack report.
 
-## Sample Input
+## Test Result Summary
 
-```text
-Enter student name: Rahul
-Enter registration number: REG101
-Enter graduation year: 2026
-Enter attendance percentage: 85
+The application was tested with different input conditions, including valid and invalid inputs, absent practice days, low scores, insufficient practice attempts, low attendance, incomplete projects, and unverified profiles.
 
-Has the student completed the required project? Enter yes or no: yes
+The application successfully validated user inputs, processed practice scores, calculated performance statistics, checked eligibility conditions, and generated the appropriate final status and recommended action.
 
-Is the student profile verified? Enter yes or no: yes
+## Individual Contribution
 
-Enter Day 1 score from 0 to 100, or -1 for absent: 80
-Enter Day 2 score from 0 to 100, or -1 for absent: 75
-Enter Day 3 score from 0 to 100, or -1 for absent: 72
-Enter Day 4 score from 0 to 100, or -1 for absent: 85
-Enter Day 5 score from 0 to 100, or -1 for absent: 78
-Enter Day 6 score from 0 to 100, or -1 for absent: 80
-Enter Day 7 score from 0 to 100, or -1 for absent: 82
+- Developed the PrepTrack application.
+- Implemented student data collection and validation.
+- Developed seven-day practice score processing.
+- Implemented score classification and performance calculations.
+- Developed placement eligibility logic.
+- Implemented final status, blocker, and next-action generation.
+- Tested the application with different scenarios.
+- Used Antigravity during the development and code review process.
+
+## Code Review Completed
+
+**Status: Completed**
+
+The code was reviewed for:
+
+- Input validation
+- Conditional logic
+- Loop implementation
+- Score calculation
+- Eligibility conditions
+- Code readability
+- Output formatting
+
+The review identified areas for future improvement, such as using functions for modularity, improving variable initialization, and removing unused variables.
+
+## Feedback Received
+
+The project demonstrates a clear understanding of Python fundamentals and problem-solving.
+
+The application has a practical use case for tracking student placement preparation. The input validation, performance classification, eligibility checking, and final report make the application easy to understand and use.
+
+Future improvements can include:
+
+- Adding a graphical user interface (GUI).
+- Storing student records in a database.
+- Exporting reports to Excel or PDF.
+- Adding login and authentication.
+- Adding charts for performance analysis.
+- Creating a web-based version of PrepTrack.
+
+## Project Status
+
+**Completed**
+
+The current version successfully performs student placement readiness evaluation through a Python console-based application.
