@@ -71,9 +71,8 @@ A student is considered ready for a mock interview when:
 
 ## Tools Used
 
-- Python
-- Antigravity
-- VS Code / Python IDE
+- Python – Used to develop the application and implement the program logic.
+- Antigravity – Used as the development/coding tool to build, review, and test the project.
 
 ## How to Run
 
