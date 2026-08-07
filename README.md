@@ -108,6 +108,66 @@ The application successfully validated user inputs, processed practice scores, c
 - Tested the application with different scenarios.
 - Used Antigravity during the development and code review process.
 
+  ## Test Result Summary
+
+| Test ID | Scenario | Expected Result | Actual Result | Status |
+|---|---|---|---|---|
+| TC-01 | All requirements satisfied | Ready for Mock Interview | Ready for Mock Interview | Pass |
+| TC-02 | Critical score present | Critical Support Required | Critical Support Required | Pass |
+| TC-03 | Fewer than six attempts | Practice Incomplete | Practice Incomplete | Pass |
+| TC-04 | Fewer than four passes | Insufficient Passed Practices | Insufficient Passed Practices | Pass |
+| TC-05 | Average below 70 | Practice Improvement Required | Practice Improvement Required | Pass |
+| TC-06 | Attendance below 75 | Attendance Improvement Required | Attendance Improvement Required | Pass |
+| TC-07 | Graduation year not eligible | Graduation Criteria Not Met | Graduation Criteria Not Met | Pass |
+| TC-08 | Project incomplete | Application On Hold | Application On Hold | Pass |
+| TC-09 | Profile not verified | Application On Hold | Application On Hold | Pass |
+| TC-10 | All days absent | Practice Not Evaluated | Practice Not Evaluated | Pass |
+| TC-11 | Invalid low score | Input rejected | Input rejected | Pass |
+| TC-12 | Invalid high score | Input rejected | Input rejected | Pass |
+| TC-13 | Boundary scores | Correct classifications | Correct classifications | Pass |
+| TC-14 | Multiple blockers | First blocker displayed | First blocker displayed | Pass |
+
+### Result
+
+**All validation checks, eligibility rules, performance calculations, and report generation worked as expected.**
+
+**Overall Test Status: PASS – 14/14 test cases passed.**
+
+  # Team Details
+
+| Field | Details |
+|---|---|
+| **Team Name** | Innovators |
+| **Team Lead** | Mohammed Jakker |
+| **Team Member Name** | Vadlamudi Neha Likhita |
+| **GitHub Repository URL** | https://github.com/pardhueemana/preptrack-pardhu |
+| **Repository Cloned** | Yes |
+| **Program Working** | Yes |
+| **Mandatory Tests Completed** | Yes |
+| **README Completed** | Yes |
+| **Code Review Completed** | Yes |
+| **Feedback Applied** | Yes |
+| **Total Commits** | 4 |
+| **Final Push Completed** | Yes |
+
+## Individual Contribution
+
+I independently contributed to the development of the complete **PrepTrack application** by:
+
+- Implementing all required input validations.
+- Developing the seven-day practice score processing logic.
+- Designing and implementing the placement eligibility conditions.
+- Implementing performance analysis and score classification.
+- Calculating total and average scores.
+- Tracking passed, failed, absent, and critical practice days.
+- Identifying the highest and lowest scores.
+- Implementing first critical score detection.
+- Generating the final placement readiness report.
+- Implementing primary blocker and next-action logic.
+- Testing the application with different scenarios.
+- Identifying and correcting logical issues.
+- Using **Antigravity** during development and code review.
+
 ## Code Review Completed
 
 **Status: Completed**
