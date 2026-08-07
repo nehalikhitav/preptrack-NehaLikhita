@@ -124,18 +124,15 @@ for day in range(1, 8):
     # 60–74   -> Satisfactory
     # 40–59   -> Needs Improvement
     # 0–39    -> Critical
-    if score >=75 and score <=100:
+    if score >=75:
         strong_days+=1
-        print("Day {day}: Strong")
-    elif score >=60 and score<=74:
+    elif score >=60:
         satisfactory_days+=1
-        print("Day {day}: Satisfactory")
-    elif score >=40 and score<=59:
+    elif score >=40:
         improvement_days+=1
-        print("Day {day}: Needs Improvement")
     else:
         critical_days+=1
-        print("Day {day}: Critical Need Improvement")
+
 
     # TODO: Count passed and failed days.
     if score>=50:
@@ -144,10 +141,11 @@ for day in range(1, 8):
         failed_days+=1
 
     # TODO: Store only the first critical day and score.
-     if score < 40 and not critical_score_found:
+    if score < 40 and not critical_score_found:
         critical_score_found = True
         first_critical_day = day
         first_critical_score = score
+
 
 
 # --------------------------------------------------
@@ -158,8 +156,6 @@ for day in range(1, 8):
 average_score = 0
 if attempted_days>0:
     average_score = total_score / attempted_days
-else:
-    average_score = 0
 
 # --------------------------------------------------
 # 5. CREATE ELIGIBILITY CONDITIONS
@@ -204,9 +200,56 @@ placement_ready = (
 # 9. Profile not verified
 # 10. Ready for Mock Interview
 
-final_status = ""
-primary_blocker = ""
-next_action = ""
+if attempted_days == 0:
+    final_status = "No Practice Attempted"
+    primary_blocker = "No practice data available"
+    next_action = "Attend and complete practice sessions"
+
+elif critical_score_found:
+    final_status = "Critical Score Found"
+    primary_blocker = f"First critical score on Day {first_critical_day} ({first_critical_score})"
+    next_action = "Improve critical scores"
+
+elif practice_count_eligible == False:
+    final_status = "Incomplete Practice"
+    primary_blocker = "Only {attempted_days} practice sessions"
+    next_action = "Complete {6 - attempted_days} more practice sessions"
+
+elif passed_days_eligible == False:
+    final_status = "Insufficient Passed Days"
+    primary_blocker = "Only {passed_days} passed days"
+    next_action = "Attend sessions to pass at least 4 days"
+
+elif average_eligible == False:
+    final_status = "Low Average Score"
+    primary_blocker = "Average score {average_score:.2f}"
+    next_action = "Improve average score to 70 or above"
+
+elif attendance_eligible == False:
+    final_status = "Low Attendance"
+    primary_blocker = f"Attendance {attendance}%"
+    next_action = "Improve attendance to 75%"
+
+elif graduation_eligible == False:
+    final_status = "Graduation Year Not Eligible"
+    primary_blocker = "Graduation year {graduation_year}"
+    next_action = "Ensure graduation year is between 2025–2027"
+
+elif project_completed == False:
+    final_status = "Project Incomplete"
+    primary_blocker = "Project not completed"
+    next_action = "Complete the required project"
+
+elif profile_verified == False:
+    final_status = "Profile Not Verified"
+    primary_blocker = "Profile not verified"
+    next_action = "Verify the student profile"
+
+else:
+    final_status = "Ready for Mock Interview"
+    primary_blocker = "No Blocker"
+    next_action = "Attend Mock Interview"
+
 
 
 # --------------------------------------------------
@@ -241,10 +284,18 @@ print(f"Average Score          : {average_score:.2f}")
 
 # TODO: Display highest and lowest values only when
 # at least one practice was attempted.
+if attempted_days>0:
+    print(f"Highest Score          : {highest_score} (Day  {highest_score_day})")
+    print(f"Lowest Score           : {lowest_score} (Day  {lowest_score_day})")
 
 # TODO: Display first critical details only when
 # a critical score exists.
-
+if critical_score_found:
+    print(f"First critical day : {first_critical_day}")
+    print(f"First critical score : {first_critical_score}")
+else:
+    print("First critical day : Not available(no critical score found)")
+    print("First critical score : Not available(no critical score found)")
 print()
 print(f"Final Status           : {final_status}")
 print(f"Primary Blocker        : {primary_blocker}")
